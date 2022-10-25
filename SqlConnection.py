@@ -24,5 +24,6 @@ class SQLConnection():
     try:
       self._conn=sqlite3.connect(database)
     except:
+      self._bc.log.error("\t"+":"+traceback.format_exc())
       raise ConnectFailed
      
